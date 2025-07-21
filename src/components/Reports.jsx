@@ -3,21 +3,11 @@ import { motion } from 'framer-motion';
 import { FileText, Download, BarChart3, TrendingUp, Users, Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { fadeInUp, staggerContainer } from '../constants/animations';
+import { buttonStyles } from '../constants/colors';
 
 const Reports = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+  // Using shared animation constants from constants/animations.js
 
   const reports = [
     {
@@ -329,7 +319,7 @@ const Reports = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/stories">
-                <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-lg transition-all duration-300">
+                <Button className={`${buttonStyles.ghost} px-8 py-3 text-lg`}>
                   Read Success Stories
                 </Button>
               </Link>

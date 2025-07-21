@@ -3,8 +3,23 @@ import { motion } from 'framer-motion';
 import { Users, Heart, Target, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import SEO from './SEO';
 
 const About = () => {
+  return (
+    <>
+      <SEO 
+        title="About Us - Our Mission & Impact"
+        description="Learn about Rising Edge Community's mission to empower underserved youth through education, athletics, and mentorship programs that transform lives and strengthen communities."
+        keywords="about rising edge, nonprofit mission, youth empowerment, community impact, educational programs"
+        url="https://risingedge.org/about"
+      />
+      {/* Rest of component content */}
+    </>
+  );
+};
+
+const AboutOld = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -54,7 +69,7 @@ const About = () => {
                 </Button>
               </Link>
               <Link to="/team">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 text-lg">
+                <Button variant="outline" className={`${buttonStyles.ghost} px-8 py-3 text-lg`}>
                   Meet Our Team
                 </Button>
               </Link>
@@ -146,7 +161,7 @@ const About = () => {
                   </Button>
                 </Link>
                 <Link to="/history">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-6 py-3">
+                  <Button variant="outline" className={`${buttonStyles.ghost} px-6 py-3`}>
                     Our History
                   </Button>
                 </Link>
@@ -155,7 +170,8 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

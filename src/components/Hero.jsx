@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { containerVariants, itemVariants, buttonVariants } from '../constants/animations';
 import { buttonStyles } from '../constants/colors';
 import heroImage from '../assets/hero-students.jpg';
+import OptimizedImage from './OptimizedImage';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,14 +28,20 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <motion.img
-          src={heroImage}
-          alt="Diverse students learning together"
-          className="w-full h-full object-cover"
+        <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-        />
+        >
+          <OptimizedImage
+            src={heroImage}
+            alt="Diverse students learning together"
+            className="w-full h-full object-cover"
+            lazy={false}
+            responsive={true}
+            sizes="100vw"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
       </div>
 

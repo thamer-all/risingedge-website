@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { BookOpen, Trophy, Heart, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { buttonStyles } from '../constants/colors';
 import stemImage from '../assets/stem-coding.jpg';
 import soccerImage from '../assets/soccer-kids.jpg';
 import mentorshipImage from '../assets/mentorship.jpg';
@@ -143,7 +144,7 @@ const ProgramsSection = () => {
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-semibold">
                 Enroll Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-semibold">
+                              <Button size="lg" variant="outline" className={buttonStyles.ghost}>
                 Volunteer With Us
               </Button>
             </div>
