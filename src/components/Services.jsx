@@ -99,7 +99,7 @@ const Services = () => {
                 </Button>
               </Link>
               <Link to="/athletics">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 font-semibold px-8 py-3 text-lg">
+                <Button variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 font-semibold px-8 py-3 text-lg transition-all duration-300">
                   Athletic Programs
                 </Button>
               </Link>
@@ -178,7 +178,7 @@ const Services = () => {
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 font-semibold px-8 py-3 text-lg">
+                <Button variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 font-semibold px-8 py-3 text-lg transition-all duration-300">
                   Contact Us
                 </Button>
               </Link>

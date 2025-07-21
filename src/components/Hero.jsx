@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { containerVariants, itemVariants, buttonVariants } from '../constants/animations';
+import { buttonStyles } from '../constants/colors';
 import heroImage from '../assets/hero-students.jpg';
 
 const Hero = () => {
@@ -19,46 +21,7 @@ const Hero = () => {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    },
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.2
-      }
-    }
-  };
+  // Using shared animation constants from constants/animations.js
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -122,7 +85,7 @@ const Hero = () => {
               <motion.div variants={buttonVariants} whileHover="hover">
                 <Button 
                   variant="outline" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-8 py-4 text-lg backdrop-blur-sm bg-white/10 transition-all duration-300"
+                  className={`${buttonStyles.ghost} px-8 py-4 text-lg backdrop-blur-sm bg-white/10`}
                 >
                   Start Your Journey
                 </Button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { Users, Clock, GraduationCap } from 'lucide-react';
 
 const StatsSection = () => {
@@ -30,34 +30,37 @@ const StatsSection = () => {
     }
   ];
 
-  useEffect(() => {
-    const animateCounters = () => {
-      const duration = 2000;
-      const steps = 60;
-      const stepDuration = duration / steps;
+  // Optimized counter animation with useCallback to prevent re-renders
+  const animateCounters = useCallback(() => {
+    const duration = 2000;
+    const steps = 60;
+    const stepDuration = duration / steps;
 
-      stats.forEach((stat, index) => {
-        let currentValue = 0;
-        const increment = stat.number / steps;
+    stats.forEach((stat, index) => {
+      let currentValue = 0;
+      const increment = stat.number / steps;
+      const counterKey = index === 0 ? 'students' : index === 1 ? 'hours' : 'graduation';
+      
+      const timer = setInterval(() => {
+        currentValue += increment;
         
-        const timer = setInterval(() => {
-          currentValue += increment;
-          
+        setCounters(prev => ({
+          ...prev,
+          [counterKey]: Math.min(Math.floor(currentValue), stat.number)
+        }));
+
+        if (currentValue >= stat.number) {
+          clearInterval(timer);
           setCounters(prev => ({
             ...prev,
-            [index === 0 ? 'students' : index === 1 ? 'hours' : 'graduation']: Math.min(Math.floor(currentValue), stat.number)
+            [counterKey]: stat.number
           }));
+        }
+      }, stepDuration);
+    });
+  }, [stats]);
 
-          if (currentValue >= stat.number) {
-            clearInterval(timer);
-            setCounters(prev => ({
-              ...prev,
-              [index === 0 ? 'students' : index === 1 ? 'hours' : 'graduation']: stat.number
-            }));
-          }
-        }, stepDuration);
-      });
-    };
+  useEffect(() => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {

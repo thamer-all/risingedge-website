@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, Users, ArrowRight } from 'lucide-react';
+import { buttonStyles } from '../constants/colors';
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -67,7 +68,7 @@ const CTASection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 font-bold px-10 py-4 text-xl hover-scale group"
+              className={`${buttonStyles.ghost} px-10 py-4 text-xl hover-scale group`}
             >
               <Users className="mr-2 h-5 w-5" />
               Volunteer Now
