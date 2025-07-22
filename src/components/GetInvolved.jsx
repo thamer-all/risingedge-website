@@ -19,7 +19,7 @@ const GetInvolved = () => {
       description: 'Help students with homework and provide one-on-one guidance',
       commitment: '2-4 hours/week',
       icon: Users,
-      color: 'bg-gradient-teal'
+      color: 'bg-gradient-to-br from-blue-600 to-blue-800'
     },
     {
       title: 'Athletic Coaching',
@@ -55,7 +55,7 @@ const GetInvolved = () => {
       {/* Header */}
       <div className="text-center mb-16">
         <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 bg-gradient-teal rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-lg">
             <Users className="w-8 h-8 text-white" />
           </div>
         </div>
@@ -238,7 +238,7 @@ const GetInvolved = () => {
         
         <div className="grid md:grid-cols-3 gap-8 text-center">
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 bg-gradient-teal rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4 shadow-lg">
               <Phone className="w-6 h-6 text-white" />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
@@ -268,7 +268,7 @@ const GetInvolved = () => {
 
       {/* Testimonial */}
       <div className="mt-16 text-center">
-        <div className="bg-gradient-teal rounded-lg p-8 text-white">
+                      <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-8 text-white shadow-lg">
           <div className="flex justify-center mb-4">
             <Star className="w-8 h-8 text-yellow-300" />
           </div>

@@ -121,10 +121,10 @@ const Calculator = () => {
             className="bg-white rounded-2xl shadow-2xl overflow-hidden"
             {...fadeInUp}
           >
-            <div className="bg-gradient-to-r from-primary to-secondary p-8 text-white text-center">
-              <CalcIcon className="h-16 w-16 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">Calculate Your Impact</h2>
-              <p className="text-xl text-white/90">
+            <div className="bg-gradient-to-r from-gray-50 to-blue-50 border-2 border-primary p-8 text-center">
+              <CalcIcon className="h-16 w-16 mx-auto mb-4 text-primary" />
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">Calculate Your Impact</h2>
+              <p className="text-xl text-gray-700">
                 Enter a donation amount to see the specific impact you can make
               </p>
             </div>
@@ -364,24 +364,24 @@ const Calculator = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Donation Transparency</h3>
+              <div className="bg-gradient-to-br from-gray-50 to-blue-50 border-2 border-primary rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900">Donation Transparency</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span>Independent Audits</span>
-                    <span className="text-green-300">✓ Annual</span>
+                    <span className="text-gray-800">Independent Audits</span>
+                    <span className="text-green-600 font-semibold">✓ Annual</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Financial Reports</span>
-                    <span className="text-green-300">✓ Public</span>
+                    <span className="text-gray-800">Financial Reports</span>
+                    <span className="text-green-600 font-semibold">✓ Public</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Impact Tracking</span>
-                    <span className="text-green-300">✓ Real-time</span>
+                    <span className="text-gray-800">Impact Tracking</span>
+                    <span className="text-green-600 font-semibold">✓ Real-time</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Donor Updates</span>
-                    <span className="text-green-300">✓ Quarterly</span>
+                    <span className="text-gray-800">Donor Updates</span>
+                    <span className="text-green-600 font-semibold">✓ Quarterly</span>
                   </div>
                 </div>
               </div>

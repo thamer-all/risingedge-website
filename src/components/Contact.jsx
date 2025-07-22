@@ -16,18 +16,49 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Basic form validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      if (window.toast) {
+        window.toast.showError('Please fill in all required fields.');
+      }
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      if (window.toast) {
+        window.toast.showError('Please enter a valid email address.');
+      }
+      return;
+    }
+    
+    try {
+      // Track form submission for analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'contact_form_submit', {
+          event_category: 'engagement'
+        });
+      }
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      if (window.toast) {
+        window.toast.showSuccess('Thank you for your message! We will get back to you soon.');
+      }
+    } catch (error) {
+      if (window.toast) {
+        window.toast.showError('Failed to send message. Please try again.');
+      }
+    }
   };
 
   return (

@@ -302,20 +302,20 @@ const Volunteer = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Volunteer Impact</h3>
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-primary rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900">Volunteer Impact</h3>
                 <div className="space-y-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold mb-2">500+</div>
-                    <div className="text-white/90">Students Supported Annually</div>
+                    <div className="text-4xl font-bold mb-2 text-transparent bg-gradient-to-r from-red-500 to-pink-600 bg-clip-text">500+</div>
+                    <div className="text-gray-700">Students Supported Annually</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold mb-2">24,000+</div>
-                    <div className="text-white/90">Volunteer Hours Per Year</div>
+                    <div className="text-4xl font-bold mb-2 text-transparent bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text">24,000+</div>
+                    <div className="text-gray-700">Volunteer Hours Per Year</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold mb-2">$600K</div>
-                    <div className="text-white/90">Value of Volunteer Contributions</div>
+                    <div className="text-4xl font-bold mb-2 text-transparent bg-gradient-to-r from-green-500 to-teal-600 bg-clip-text">$600K</div>
+                    <div className="text-gray-700">Value of Volunteer Contributions</div>
                   </div>
                 </div>
               </div>
@@ -368,8 +368,8 @@ const Volunteer = () => {
                     </div>
 
                     {/* Step Number */}
-                    <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
+                    <div className="relative z-10 w-16 h-16 bg-white border-4 border-primary rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-gray-900 font-bold text-xl">{step.step}</span>
                     </div>
 
                     {/* Spacer for opposite side */}

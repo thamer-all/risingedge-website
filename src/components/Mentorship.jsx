@@ -313,8 +313,15 @@ const Mentorship = () => {
                     </div>
 
                     {/* Step Number */}
-                    <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
+                    <div className="relative z-10 w-16 h-16 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center shadow-lg">
+                      <span className={`font-bold text-xl text-transparent bg-clip-text ${
+                        index % 6 === 0 ? 'bg-gradient-to-r from-red-500 to-pink-600' :
+                        index % 6 === 1 ? 'bg-gradient-to-r from-blue-500 to-cyan-600' :
+                        index % 6 === 2 ? 'bg-gradient-to-r from-green-500 to-teal-600' :
+                        index % 6 === 3 ? 'bg-gradient-to-r from-purple-500 to-indigo-600' :
+                        index % 6 === 4 ? 'bg-gradient-to-r from-orange-500 to-yellow-600' :
+                        'bg-gradient-to-r from-pink-500 to-purple-600'
+                      }`}>{step.step}</span>
                     </div>
 
                     {/* Spacer for opposite side */}

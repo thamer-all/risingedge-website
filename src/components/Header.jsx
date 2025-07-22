@@ -2,10 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import useFocusTrap from '../hooks/useFocusTrap';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const focusTrapRef = useFocusTrap(isMobileMenuOpen);
+
+  useEffect(() => {
+    const handleEscape = () => setIsMobileMenuOpen(false);
+    
+    if (focusTrapRef.current) {
+      focusTrapRef.current.addEventListener('focustrap:escape', handleEscape);
+      return () => {
+        focusTrapRef.current?.removeEventListener('focustrap:escape', handleEscape);
+      };
+    }
+  }, [isMobileMenuOpen, focusTrapRef]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,11 +64,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
-              <div className="w-10 h-10 bg-gradient-teal rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">RE</span>
+            <Link to="/" className="flex items-center group">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center mr-3 shadow-lg group-hover:scale-105 transition-transform duration-200">
+                <span className="text-white font-bold text-xl drop-shadow-md">RE</span>
               </div>
-              <span className="text-xl font-bold text-gray-900 hidden sm:block">
+              <span className="text-xl font-bold text-gray-900 hidden sm:block group-hover:text-blue-600 transition-colors duration-200">
                 Rising Edge Community
               </span>
             </Link>
@@ -124,7 +137,11 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t shadow-lg">
-          <div className="px-4 py-6 space-y-4">
+          <div 
+            ref={focusTrapRef}
+            className="px-4 py-6 space-y-4"
+            onFocustrap:escape={() => setIsMobileMenuOpen(false)}
+          >
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link

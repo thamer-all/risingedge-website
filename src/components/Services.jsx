@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, Trophy, Users, Heart, Briefcase, HandHeart, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { buttonStyles } from '../constants/colors';
 
 const Services = () => {
   const fadeInUp = {
@@ -99,7 +100,7 @@ const Services = () => {
                 </Button>
               </Link>
               <Link to="/athletics">
-                <Button variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 font-semibold px-8 py-3 text-lg transition-all duration-300">
+                <Button variant="outline" className={`${buttonStyles.ghost} px-8 py-3 text-lg backdrop-blur-sm bg-white/20 border-white/30 hover:bg-white hover:text-green-600`}>
                   Athletic Programs
                 </Button>
               </Link>
@@ -178,7 +179,7 @@ const Services = () => {
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 font-semibold px-8 py-3 text-lg transition-all duration-300">
+                <Button variant="outline" className={`${buttonStyles.ghost} px-8 py-3 text-lg backdrop-blur-sm bg-white/20 border-white/30 hover:bg-white hover:text-green-600`}>
                   Contact Us
                 </Button>
               </Link>

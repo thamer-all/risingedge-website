@@ -63,7 +63,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-20 bg-gradient-hero">
+    <section id="testimonials" ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -71,10 +71,20 @@ const TestimonialsSection = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            animate={{
+              textShadow: [
+                "0 2px 4px rgba(59, 130, 246, 0.1)",
+                "0 4px 8px rgba(59, 130, 246, 0.2)",
+                "0 2px 4px rgba(59, 130, 246, 0.1)"
+              ]
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
             Stories of Transformation
-          </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          </motion.h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Hear from the families, students, and alumni whose lives have been changed through our programs.
           </p>
         </motion.div>
@@ -149,7 +159,7 @@ const TestimonialsSection = () => {
               variant="outline"
               size="sm"
               onClick={prevTestimonial}
-              className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+              className="bg-white border-white/50 text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-all duration-300"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -174,7 +184,7 @@ const TestimonialsSection = () => {
               variant="outline"
               size="sm"
               onClick={nextTestimonial}
-              className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+              className="bg-white border-white/50 text-gray-900 hover:bg-gray-100 hover:text-gray-900 transition-all duration-300"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -190,9 +200,9 @@ const TestimonialsSection = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.03, backgroundColor: 'rgba(255,255,255,0.25)' }}
-                className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
-                  index === currentTestimonial ? 'ring-2 ring-white/50' : ''
+                whileHover={{ scale: 1.03 }}
+                className={`bg-white/90 backdrop-blur-sm rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:bg-white ${
+                  index === currentTestimonial ? 'ring-2 ring-primary bg-white shadow-lg' : ''
                 }`}
                 onClick={() => setCurrentTestimonial(index)}
               >
@@ -203,15 +213,15 @@ const TestimonialsSection = () => {
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-semibold text-white text-sm">
+                    <div className="font-semibold text-gray-900 text-sm">
                       {testimonial.author}
                     </div>
-                    <div className="text-white/70 text-xs">
+                    <div className="text-gray-700 text-xs">
                       {testimonial.role}
                     </div>
                   </div>
                 </div>
-                <p className="text-white/90 text-sm line-clamp-3">
+                <p className="text-gray-800 text-sm line-clamp-3 font-medium">
                   "{testimonial.quote}"
                 </p>
               </motion.div>

@@ -390,24 +390,24 @@ const Events = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Event Volunteer Benefits</h3>
+              <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-primary rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900">Event Volunteer Benefits</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <Heart className="h-5 w-5 mr-3" />
-                    <span>Make a direct impact on community events</span>
+                    <Heart className="h-5 w-5 mr-3 text-primary" />
+                    <span className="text-gray-700">Make a direct impact on community events</span>
                   </div>
                   <div className="flex items-center">
-                    <Users className="h-5 w-5 mr-3" />
-                    <span>Meet like-minded community members</span>
+                    <Users className="h-5 w-5 mr-3 text-primary" />
+                    <span className="text-gray-700">Meet like-minded community members</span>
                   </div>
                   <div className="flex items-center">
-                    <Star className="h-5 w-5 mr-3" />
-                    <span>Gain event planning experience</span>
+                    <Star className="h-5 w-5 mr-3 text-primary" />
+                    <span className="text-gray-700">Gain event planning experience</span>
                   </div>
                   <div className="flex items-center">
-                    <Calendar className="h-5 w-5 mr-3" />
-                    <span>Flexible scheduling options</span>
+                    <Calendar className="h-5 w-5 mr-3 text-primary" />
+                    <span className="text-gray-700">Flexible scheduling options</span>
                   </div>
                 </div>
               </div>

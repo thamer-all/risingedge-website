@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Code, Calculator, Users, Clock, Award, ArrowRight, CheckCircle } from 'lucide-react';
+import { BookOpen, Code, Calculator, Users, Clock, Award, ArrowRight, CheckCircle, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { fadeInUp, staggerContainer } from '../constants/animations';
@@ -45,6 +45,24 @@ const Education = () => {
       ages: "Ages 6-18",
       schedule: "Mon-Fri, 3:30-6:00 PM",
       color: "from-orange-500 to-orange-600"
+    },
+    {
+      icon: Award,
+      title: "College Preparation",
+      description: "Comprehensive college readiness program including application support and scholarship guidance.",
+      features: ["SAT/ACT prep", "College application essays", "Scholarship search", "Financial aid guidance"],
+      ages: "Ages 14-18",
+      schedule: "Sat, 10:00 AM-2:00 PM",
+      color: "from-red-500 to-pink-600"
+    },
+    {
+      icon: BookOpen,
+      title: "Creative Writing & Arts",
+      description: "Fostering creativity and self-expression through writing, storytelling, and digital arts.",
+      features: ["Creative writing workshops", "Digital storytelling", "Poetry and spoken word", "Art therapy"],
+      ages: "Ages 8-18",
+      schedule: "Wed/Fri, 4:00-5:30 PM",
+      color: "from-teal-500 to-cyan-600"
     }
   ];
 
@@ -124,7 +142,7 @@ const Education = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -179,6 +197,118 @@ const Education = () => {
                 </motion.div>
               );
             })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How Our Programs Work */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              How Our Programs Work
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our structured approach ensures every student receives personalized attention and achieves their academic goals.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div className="text-center" variants={fadeInUp}>
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">1</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Assessment & Goal Setting</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We evaluate each student's current academic level and work together to set achievable, personalized learning goals.
+              </p>
+            </motion.div>
+
+            <motion.div className="text-center" variants={fadeInUp}>
+              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">2</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Personalized Learning Plan</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our educators create customized curricula that match each student's learning style, interests, and academic needs.
+              </p>
+            </motion.div>
+
+            <motion.div className="text-center" variants={fadeInUp}>
+              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">3</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Progress Tracking & Support</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Regular assessments and family communication ensure students stay on track and celebrate every achievement.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Parent & Family Resources */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Supporting Families Every Step of the Way
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We believe education extends beyond the classroom. Our family support programs ensure parents and caregivers are equipped to support their child's learning journey.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg text-center" variants={fadeInUp}>
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Parent Workshops</h3>
+              <p className="text-gray-600">Monthly sessions covering homework help, study strategies, and college planning.</p>
+            </motion.div>
+
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg text-center" variants={fadeInUp}>
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Resource Library</h3>
+              <p className="text-gray-600">Access to educational materials, books, and online learning tools for home use.</p>
+            </motion.div>
+
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg text-center" variants={fadeInUp}>
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Progress Reports</h3>
+              <p className="text-gray-600">Regular updates on your child's academic progress and areas for improvement.</p>
+            </motion.div>
+
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg text-center" variants={fadeInUp}>
+              <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Family Events</h3>
+              <p className="text-gray-600">Celebration events, academic fairs, and community building activities throughout the year.</p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -268,6 +398,137 @@ const Education = () => {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Academic Calendar & Schedule */}
+      <section className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            {...fadeInUp}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Academic Calendar & Important Dates
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Stay informed about program schedules, registration periods, and special events throughout the academic year.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" variants={fadeInUp}>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mr-4">
+                  <Calendar className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Fall Semester</h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex justify-between">
+                  <span>Registration Opens</span>
+                  <span className="font-semibold text-primary">Aug 15</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Classes Begin</span>
+                  <span className="font-semibold text-primary">Sep 1</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Mid-semester Break</span>
+                  <span className="font-semibold text-primary">Oct 15-16</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Semester Ends</span>
+                  <span className="font-semibold text-primary">Dec 20</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" variants={fadeInUp}>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-4">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Spring Semester</h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex justify-between">
+                  <span>Registration Opens</span>
+                  <span className="font-semibold text-primary">Dec 1</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Classes Begin</span>
+                  <span className="font-semibold text-primary">Jan 15</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Spring Break</span>
+                  <span className="font-semibold text-primary">Mar 25-29</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Semester Ends</span>
+                  <span className="font-semibold text-primary">May 30</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" variants={fadeInUp}>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4">
+                  <Award className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Summer Programs</h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex justify-between">
+                  <span>Registration Opens</span>
+                  <span className="font-semibold text-primary">Apr 1</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Session 1</span>
+                  <span className="font-semibold text-primary">Jun 1-30</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Session 2</span>
+                  <span className="font-semibold text-primary">Jul 1-31</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Summer Showcase</span>
+                  <span className="font-semibold text-primary">Aug 5</span>
+                </li>
+              </ul>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="mt-16 bg-white rounded-xl p-8 shadow-lg"
+            {...fadeInUp}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Special Events & Celebrations</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-lg font-semibold text-primary mb-2">Student Showcase</div>
+                <div className="text-gray-600">Quarterly presentations of student projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-primary mb-2">Science Fair</div>
+                <div className="text-gray-600">Annual STEM competition and exhibition</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-primary mb-2">Reading Marathon</div>
+                <div className="text-gray-600">Community-wide literacy celebration</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold text-primary mb-2">Graduation Ceremony</div>
+                <div className="text-gray-600">Celebrating student achievements</div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

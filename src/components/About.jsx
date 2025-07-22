@@ -4,22 +4,9 @@ import { Users, Heart, Target, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
+import { buttonStyles } from '../constants/colors';
 
 const About = () => {
-  return (
-    <>
-      <SEO 
-        title="About Us - Our Mission & Impact"
-        description="Learn about Rising Edge Community's mission to empower underserved youth through education, athletics, and mentorship programs that transform lives and strengthen communities."
-        keywords="about rising edge, nonprofit mission, youth empowerment, community impact, educational programs"
-        url="https://risingedge.org/about"
-      />
-      {/* Rest of component content */}
-    </>
-  );
-};
-
-const AboutOld = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -35,6 +22,13 @@ const AboutOld = () => {
   };
 
   return (
+    <>
+      <SEO 
+        title="About Us - Our Mission & Impact"
+        description="Learn about Rising Edge Community's mission to empower underserved youth through education, athletics, and mentorship programs that transform lives and strengthen communities."
+        keywords="about rising edge, nonprofit mission, youth empowerment, community impact, educational programs"
+        url="https://risingedge.org/about"
+      />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-teal-600 text-white py-20 lg:py-32 overflow-hidden">

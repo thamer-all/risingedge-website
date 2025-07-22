@@ -213,8 +213,12 @@ const Stories = () => {
                   <div className={`${!isEven ? 'lg:col-start-2' : ''}`}>
                     <div className="relative">
                       <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-                        <div className="w-48 h-48 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-4xl">
+                        <div className={`w-48 h-48 rounded-full flex items-center justify-center ${
+                          index % 3 === 0 ? 'bg-gradient-to-br from-red-500 to-pink-600' :
+                          index % 3 === 1 ? 'bg-gradient-to-br from-blue-500 to-cyan-600' :
+                          'bg-gradient-to-br from-green-500 to-teal-600'
+                        }`}>
+                          <span className="text-white font-bold text-4xl drop-shadow-lg">
                             {story.name.split(' ').map(n => n[0]).join('')}
                           </span>
                         </div>
@@ -285,8 +289,12 @@ const Stories = () => {
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 variants={fadeInUp}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white font-bold text-lg">
+                <div className={`w-16 h-16 rounded-lg flex items-center justify-center mb-4 ${
+                  index % 3 === 0 ? 'bg-gradient-to-br from-red-500 to-pink-600' :
+                  index % 3 === 1 ? 'bg-gradient-to-br from-blue-500 to-cyan-600' :
+                  'bg-gradient-to-br from-green-500 to-teal-600'
+                }`}>
+                  <span className="text-white font-bold text-lg drop-shadow-md">
                     {story.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>

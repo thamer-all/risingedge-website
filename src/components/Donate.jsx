@@ -54,12 +54,16 @@ const Donate = () => {
     const amount = selectedAmount || parseFloat(customAmount);
     
     if (!amount || amount < 1) {
-      alert('Please enter a valid donation amount.');
+      if (window.toast) {
+        window.toast.showError('Please enter a valid donation amount.');
+      }
       return;
     }
     
     if (!donorInfo.firstName || !donorInfo.lastName || !donorInfo.email) {
-      alert('Please fill in all required fields.');
+      if (window.toast) {
+        window.toast.showError('Please fill in all required fields.');
+      }
       return;
     }
     
@@ -67,13 +71,25 @@ const Donate = () => {
   };
 
   const handlePaymentSuccess = (paymentData) => {
-    console.log('Payment successful:', paymentData);
+    // Track successful payment for analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'donation_success', {
+        value: donationAmount,
+        currency: 'USD',
+        event_category: 'donation'
+      });
+    }
     setCurrentStep('success');
   };
 
   const handlePaymentError = (error) => {
-    console.error('Payment failed:', error);
-    alert('Payment failed. Please try again.');
+    // Log error to monitoring service in production
+    if (process.env.NODE_ENV === 'production' && window.errorLogger) {
+      window.errorLogger.log('Payment processing failed', error);
+    }
+    if (window.toast) {
+      window.toast.showError('Payment failed. Please try again.');
+    }
   };
 
   const handlePaymentCancel = () => {

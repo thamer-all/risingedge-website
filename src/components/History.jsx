@@ -143,7 +143,14 @@ const History = () => {
                     <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                       {/* Year Marker */}
                       <div className="md:w-1/2 flex justify-center md:justify-end md:pr-8">
-                        <div className="bg-primary text-white text-2xl font-bold py-2 px-6 rounded-full shadow-lg">
+                        <div className={`text-white text-2xl font-bold py-2 px-6 rounded-full shadow-lg ${
+                          index % 6 === 0 ? 'bg-gradient-to-r from-red-500 to-pink-600' :
+                          index % 6 === 1 ? 'bg-gradient-to-r from-blue-500 to-cyan-600' :
+                          index % 6 === 2 ? 'bg-gradient-to-r from-green-500 to-teal-600' :
+                          index % 6 === 3 ? 'bg-gradient-to-r from-purple-500 to-indigo-600' :
+                          index % 6 === 4 ? 'bg-gradient-to-r from-orange-500 to-yellow-600' :
+                          'bg-gradient-to-r from-pink-500 to-purple-600'
+                        }`}>
                           {event.year}
                         </div>
                       </div>

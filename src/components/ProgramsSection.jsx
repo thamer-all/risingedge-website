@@ -135,16 +135,16 @@ const ProgramsSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-20">
-          <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-4">Ready to Make a Difference?</h3>
-            <p className="text-xl mb-6 opacity-90">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-primary rounded-2xl p-8">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">Ready to Make a Difference?</h3>
+            <p className="text-xl mb-6 text-gray-700">
               Join our programs and be part of a community that's transforming lives every day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-semibold">
+              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-semibold">
                 Enroll Now
               </Button>
-                              <Button size="lg" variant="outline" className={buttonStyles.ghost}>
+              <Button size="lg" variant="outline" className="border-2 border-purple-500 text-transparent bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white font-semibold transition-all duration-300">
                 Volunteer With Us
               </Button>
             </div>
