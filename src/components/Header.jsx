@@ -75,83 +75,164 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
-          {/* Premium Logo */}
+          {/* Ultra-Premium Logo */}
           <motion.div 
             className="flex-shrink-0"
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Link to="/" className="flex items-center group">
-              <div className="relative mr-4">
-                {/* Main Logo Container */}
+              <div className="relative mr-5">
+                {/* Main Premium Logo Container */}
                 <motion.div 
-                  className="relative w-14 h-14 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-500"
+                  className="relative w-16 h-16 bg-gradient-to-br from-slate-900 via-gray-800 to-slate-900 rounded-3xl flex items-center justify-center shadow-2xl group-hover:shadow-3xl transition-all duration-700 border border-gray-700/50"
                   whileHover={{ 
-                    boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.4)",
-                    rotate: 1
+                    boxShadow: "0 35px 60px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(16, 185, 129, 0.3)",
+                    rotate: [0, 1, -1, 0],
+                    scale: 1.05
                   }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  {/* Geometric Pattern Background */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent"></div>
-                    <div className="absolute -top-2 -left-2 w-6 h-6 bg-white/10 rounded-full blur-sm"></div>
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white/10 rounded-full blur-sm"></div>
+                  {/* Sophisticated Background Pattern */}
+                  <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                    {/* Primary gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-orange-500/20"></div>
+                    
+                    {/* Geometric accent lines */}
+                    <div className="absolute top-3 left-3 w-8 h-0.5 bg-gradient-to-r from-emerald-400 to-transparent opacity-60"></div>
+                    <div className="absolute bottom-3 right-3 w-6 h-0.5 bg-gradient-to-l from-orange-400 to-transparent opacity-60"></div>
+                    
+                    {/* Subtle corner highlights */}
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+                    <div className="absolute -top-1 -left-1 w-4 h-4 bg-emerald-400/20 rounded-full blur-sm"></div>
+                    <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-orange-400/20 rounded-full blur-sm"></div>
                   </div>
                   
-                  {/* Main Logo Icon */}
+                  {/* Premium Logo Mark */}
                   <div className="relative z-10 flex items-center justify-center">
-                    <span className="text-white font-bold text-2xl tracking-tight" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800 }}>
-                      R
-                    </span>
+                    {/* Main "R" with premium styling */}
                     <motion.span 
-                      className="text-yellow-300 font-bold text-xl ml-0.5"
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800 }}
+                      className="text-white font-black text-3xl tracking-tight drop-shadow-lg"
+                      style={{ 
+                        fontFamily: 'Inter, system-ui, sans-serif', 
+                        fontWeight: 900,
+                        textShadow: '0 2px 8px rgba(0,0,0,0.3)'
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      R
+                    </motion.span>
+                    
+                    {/* Animated "E" with premium accent */}
+                    <motion.span 
+                      className="text-emerald-400 font-black text-2xl ml-1 drop-shadow-lg"
+                      animate={{ 
+                        opacity: [0.8, 1, 0.8],
+                        textShadow: [
+                          '0 0 8px rgba(16, 185, 129, 0.5)',
+                          '0 0 16px rgba(16, 185, 129, 0.8)',
+                          '0 0 8px rgba(16, 185, 129, 0.5)'
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 3, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                      }}
+                      style={{ 
+                        fontFamily: 'Inter, system-ui, sans-serif', 
+                        fontWeight: 900
+                      }}
                     >
                       E
                     </motion.span>
                   </div>
+                  
+                  {/* Premium floating accent */}
+                  <motion.div 
+                    className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-full shadow-lg"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      boxShadow: [
+                        '0 0 0 0 rgba(16, 185, 129, 0.7)',
+                        '0 0 0 6px rgba(16, 185, 129, 0)',
+                        '0 0 0 0 rgba(16, 185, 129, 0)'
+                      ]
+                    }}
+                    transition={{ 
+                      duration: 2.5, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </motion.div>
                 
-                {/* Premium Heart Badge */}
+                {/* Premium Success Badge */}
                 <motion.div 
-                  className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center shadow-lg"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-orange-400 via-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-xl border-2 border-white"
+                  whileHover={{ scale: 1.3, rotate: 15 }}
                   animate={{ 
-                    boxShadow: ["0 0 0 0 rgba(251, 146, 60, 0.7)", "0 0 0 10px rgba(251, 146, 60, 0)", "0 0 0 0 rgba(251, 146, 60, 0)"]
+                    boxShadow: [
+                      "0 0 0 0 rgba(251, 146, 60, 0.7)", 
+                      "0 0 0 12px rgba(251, 146, 60, 0)", 
+                      "0 0 0 0 rgba(251, 146, 60, 0)"
+                    ]
                   }}
                   transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity },
+                    boxShadow: { duration: 2.5, repeat: Infinity },
                     scale: { type: "spring", stiffness: 300 },
                     rotate: { type: "spring", stiffness: 300 }
                   }}
                 >
-                  <Heart className="w-2.5 h-2.5 text-white fill-current" />
+                  <Heart className="w-3 h-3 text-white fill-current drop-shadow-sm" />
                 </motion.div>
                 
-                {/* Subtle Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
+                {/* Ultra-Premium Glow Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-500/30 via-transparent to-orange-500/30 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700 -z-10"></div>
               </div>
               
-              {/* Enhanced Typography */}
+              {/* Premium Typography System */}
               <div className="hidden sm:block">
                 <motion.div 
                   className="relative"
-                  whileHover={{ x: 2 }}
+                  whileHover={{ x: 3, y: -1 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:via-emerald-500 group-hover:to-emerald-400 transition-all duration-500" 
-                       style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, letterSpacing: '-0.02em' }}>
+                  {/* Main Brand Name */}
+                  <div className="text-3xl font-black bg-gradient-to-r from-slate-900 via-gray-800 to-slate-900 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:via-emerald-700 group-hover:to-orange-600 transition-all duration-700" 
+                       style={{ 
+                         fontFamily: 'Inter, system-ui, sans-serif', 
+                         fontWeight: 900, 
+                         letterSpacing: '-0.03em',
+                         lineHeight: '1.1'
+                       }}>
                     Rising Edge
                   </div>
-                  <div className="text-lg font-semibold text-emerald-600 group-hover:text-emerald-500 transition-colors duration-300 -mt-1"
-                       style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, letterSpacing: '0.05em' }}>
-                    COMMUNITY
+                  
+                  {/* Premium Subtitle */}
+                  <div className="text-base font-bold text-emerald-600 group-hover:text-emerald-500 transition-colors duration-500 -mt-1.5"
+                       style={{ 
+                         fontFamily: 'Inter, system-ui, sans-serif', 
+                         fontWeight: 700, 
+                         letterSpacing: '0.08em',
+                         textTransform: 'uppercase'
+                       }}>
+                    Community
                   </div>
-                  <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300 mt-0.5 font-medium tracking-wide">
-                    Empowering Youth • Building Futures
+                  
+                  {/* Elegant Tagline */}
+                  <div className="text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-500 mt-1 font-semibold tracking-wide opacity-90">
+                    <span className="text-emerald-600">•</span> Empowering Tomorrow's Leaders <span className="text-orange-500">•</span>
                   </div>
+                  
+                  {/* Premium Underline Effect */}
+                  <motion.div 
+                    className="h-0.5 bg-gradient-to-r from-emerald-500 to-orange-500 mt-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  />
                 </motion.div>
               </div>
             </Link>
